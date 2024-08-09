@@ -39,7 +39,7 @@ function NavbarCompo() {
     <>
       <Navbar bg="light" expand="lg" className="mb-5 p-3 position-sticky top-0 z-3">
         <Container fluid className=' ms-0 ms-sm-1 ms-md-2 ms-lg-5 me-0  me-sm-1 me-md-2 me-lg-5 p-0'>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleShow} />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className='text-white' onClick={handleShow} />
           <Nav className="me-auto d-none d-sm-none d-md-none d-lg-none d-xl-block " style={{width:"30%"}}>
               <div className='d-flex'><Nav.Link as={NavLink} to="/women" className='Women_Hov'>Women</Nav.Link>
               <Nav.Link as={NavLink} to="/men">Men</Nav.Link>
@@ -113,8 +113,6 @@ function NavbarCompo() {
             <Nav.Link as={NavLink} to="/wishlist" onClick={handleClose}><FaRegHeart /> Wishlist</Nav.Link>
             <Nav.Link as={NavLink} to="/locations" onClick={handleClose}><FaMapMarkerAlt /> Locations</Nav.Link>
             <Nav.Link as={NavLink} to="/account" onClick={handleClose}><FaUser /> Account</Nav.Link>
-            <Nav.Link as={NavLink} to="/cart" onClick={handleClose}><FaShoppingCart /> </Nav.Link>
-            <input type="text" />
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>

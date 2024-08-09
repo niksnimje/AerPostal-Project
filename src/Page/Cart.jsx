@@ -16,12 +16,12 @@ function Cart() {
       <h4>Shopping Bag (1)</h4>
       <hr />
       <div className="row">
-        <div className="col-8">
+        <div className=" col-12 col-sm-8 col-md-8 col-lg-8">
           <div className="row">
-            <div className="col-3">
+            <div className="col-3 col-12 col-sm-8 col-md-4 col-lg-3">
                 <img src="https://m.media-amazon.com/images/I/51FICIl4KjL._SY741_.jpg" alt="" height={200} width={200} />
             </div>
-            <div className="col-6">
+            <div className="col-6 col-12 col-sm-6 col-md-6 col-lg-6">
               <h6>Pacific Palisades Club Crew Sweatshirt</h6>
               <span><b>Price:-___</b></span> <span>Comp. Value: $54.95</span> &nbsp;&nbsp;
               <button className='p-1' onClick={()=>setamont(amont-1)} disabled={amont===0}>-</button>
