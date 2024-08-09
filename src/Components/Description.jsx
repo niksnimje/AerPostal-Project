@@ -1,22 +1,30 @@
+
+
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { Nav, Tab, Row, Col } from 'react-bootstrap';
+import { Nav, Tab, Row, Col, Modal, Button } from 'react-bootstrap';
 import { TbTruckDelivery } from "react-icons/tb";
 import { GiCardPickup } from "react-icons/gi";
+import { PiHeartBold } from "react-icons/pi";
+
 // import './Css/Description.css'; // Import a separate CSS file for custom styles
 
 function Description() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [desdata, setdesdata] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
-  useEffect(() => {
+  const Decriptionfatchdata = () => {
     axios
       .get(`http://localhost:3000/women-product/${id}`)
       .then((res) => setProduct(res.data))
       .catch((err) => console.log(err));
+  }
+
+  useEffect(() => {
+    Decriptionfatchdata();
     DesProduct();
   }, [id]);
 
@@ -29,6 +37,13 @@ function Description() {
 
   if (!product) return <p>Loading...</p>;
 
+
+    const LikeColor=()=>{
+    const like=document.getElementById("Like-btn")
+    like.style.color="red"
+  }
+
+
   return (
     <>
       <div className="container-fluid mt-4">
@@ -36,14 +51,14 @@ function Description() {
           <div className="col-12 col-lg-7">
             <Tab.Container defaultActiveKey="img1">
               <Row>
-                <Col sm={12} className="d-none d-lg-flex ">
+                <Col sm={12} className="d-none d-lg-flex">
                   <div className="d-flex flex-column flex-lg-row flex-wrap gap-1">
                     <img src={product.img} alt={product.title} className="img-fluid mb-2" />
                     <img src={product.img2} alt={product.title} className="img-fluid mb-2" />
                   </div>
                 </Col>
 
-                <Col sm={12} className="d-none d-lg-flex ">
+                <Col sm={12} className="d-none d-lg-flex">
                   <div className="d-flex flex-column flex-lg-row flex-wrap gap-1">
                     <img src={product.img3} alt={product.title} className="img-fluid mb-2" />
                     <img src={product.img4} alt={product.title} className="img-fluid mb-2" />
@@ -90,7 +105,7 @@ function Description() {
               <h4>Details</h4>
               <p>{product.details}</p>
               <h4>Available Sizes</h4>
-              <ul className='p-0 d-flex justify-content-center justify-content-lg-start  ' style={{ listStyle: "none", gap: "10px" }}>
+              <ul className='p-0 d-flex justify-content-center justify-content-lg-start' style={{ listStyle: "none", gap: "10px" }}>
                 {product.sizes.map((size, index) => (
                   <li key={index}>{size}</li>
                 ))}
@@ -107,19 +122,25 @@ function Description() {
                     ))
                     : null}
               </ul>
-                    <button className='btn btn-light'>
-                    <TbTruckDelivery />Delivery
-                    </button>
-                    <button className='btn btn-light'>
-                    <GiCardPickup />Free Pickup
-                    </button>
-                     <br />
-                     <br />
-              <button className='btn btn-primary text-white'><Link to={"/bag"}>Add to Bag</Link></button>
-              <p style={{fontSize:"12px"}}>4 interest-free payments. Available for orders above <br /> $35. <b>Klarna.</b> Learn More...</p>
+              <button className='btn btn-light'>
+                <TbTruckDelivery />Delivery
+              </button> &nbsp;&nbsp;
+              <button className='btn btn-light'>
+                <GiCardPickup />Free Pickup
+              </button>
+              <br />
+              <br />
+              <button className='btn btn-primary text-white' onClick={() => setShowModal(true)}>
+                Add to Bag
+              </button>
+              <button className='btn btn-light' style={{fontSize:"20px"}} onClick={LikeColor} id='Like-btn'><PiHeartBold /></button>
+
+              <br />
+              <br />
+              <p style={{ fontSize: "12px" }}>4 interest-free payments. Available for orders above <br /> $35. <b>Klarna.</b> Learn More...</p>
               <hr />
-              <a href="#" style={{fontSize:"13px",color:"black"}}>Product Details & Fit</a> <br />
-              <a href="#" style={{fontSize:"13px",color:"black"}}>Shiping & Returns </a>
+              <a href="#" style={{ fontSize: "13px", color: "black" }}>Product Details & Fit</a> <br />
+              <a href="#" style={{ fontSize: "13px", color: "black" }}>Shipping & Returns</a>
             </div>
           </div>
         </div>
@@ -130,7 +151,6 @@ function Description() {
           <h3>You May Also Like</h3>
           {desdata.map((el) => (
             <div key={el.id} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 text-center">
-
               <Link to={`/description/${el.id}`}>
                 <img src={el.img} alt={el.title} className="img-fluid" />
               </Link>
@@ -140,6 +160,24 @@ function Description() {
           ))}
         </div>
       </div>
+
+      {/* Modal */}
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Item Added to Bag</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>{product.title} has been added to your bag.</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            Close
+          </Button>
+          <Button variant="primary" as={Link} to="/cart" onClick={() => setShowModal(false)}>
+            Go to Bag
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }
