@@ -48,13 +48,14 @@ function Women() {
       } else {
         return prevColors.filter((c) => c !== color);
       }
+
     });
   };
 
   const toggleSidebar = () => {
     setSidebarVisible(!isSidebarVisible);
     const main = document.getElementById("main-product-row");
-    const isPhone = window.innerWidth < 768; // Adjust based on your breakpoints
+    const isPhone = window.innerWidth < 768; 
 
     if (!isPhone) {
       if (main.style.marginLeft === "0%") {
@@ -63,7 +64,6 @@ function Women() {
       } else {
         main.style.marginLeft = "0%";
         main.style.transition="all 0.3s ease-in"
-
       }
     }
   };
@@ -78,7 +78,7 @@ function Women() {
               <div className="filter-container flex-wrap mb-0">
               <div className="col-10 col-md-2 d-none d-sm-none d-md-none d-lg-block">
             {isSidebarVisible && <Sidebar onFilterChange={handleFilterChange} />}
-            <button className='show-filter-btn' onClick={toggleSidebar}>
+            <button className='show-filter-btn p-2' onClick={toggleSidebar}>
               {isSidebarVisible ? <IoMdClose /> :  <IoMdSwitch />}
               {isSidebarVisible ? 'Close Filter' :  'Show Filter'}
             </button>

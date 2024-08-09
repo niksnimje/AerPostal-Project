@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Nav, Tab, Row, Col } from 'react-bootstrap';
+import { TbTruckDelivery } from "react-icons/tb";
+import { GiCardPickup } from "react-icons/gi";
 // import './Css/Description.css'; // Import a separate CSS file for custom styles
 
 function Description() {
@@ -105,7 +107,19 @@ function Description() {
                     ))
                     : null}
               </ul>
-              <button className='btn btn-primary'>Add to Bag</button>
+                    <button className='btn btn-light'>
+                    <TbTruckDelivery />Delivery
+                    </button>
+                    <button className='btn btn-light'>
+                    <GiCardPickup />Free Pickup
+                    </button>
+                     <br />
+                     <br />
+              <button className='btn btn-primary text-white'><Link to={"/bag"}>Add to Bag</Link></button>
+              <p style={{fontSize:"12px"}}>4 interest-free payments. Available for orders above <br /> $35. <b>Klarna.</b> Learn More...</p>
+              <hr />
+              <a href="#" style={{fontSize:"13px",color:"black"}}>Product Details & Fit</a> <br />
+              <a href="#" style={{fontSize:"13px",color:"black"}}>Shiping & Returns </a>
             </div>
           </div>
         </div>
