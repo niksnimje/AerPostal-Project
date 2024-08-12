@@ -14,6 +14,7 @@ import Homepage from '../Page/Homepage';
 import Women from '../Page/Women';
 import Description from '../Components/Description';
 import CreateAccount from '../Page/CreateAccount';
+import DescriptionMen from '../Components/DescriptionMen';
 
 
 
@@ -26,6 +27,7 @@ function AllRouters() {
         <Route path="/" element={<Homepage />} />
         <Route path="/women" element={<Women />} />
         <Route path="/description/:id" element={<Description />}  />
+        <Route path="/description2/:id" element={<DescriptionMen />}  />
         <Route path="/men" element={<Men />} />
         <Route path="/jeans" element={<Jeans />} />
         <Route path="/aero-for-all" element={<AeroForAll />} />

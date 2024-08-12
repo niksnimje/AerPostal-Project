@@ -105,7 +105,7 @@ function Men() {
                   key={el.id}
                   className="pt-5 col-12 col-sm-6 col-md-4 col-lg-3 mb-4 text-start"
                 >
-                  <Link to={`/description/${el.id}`}>
+                  <Link to={`/description2/${el.id}`}>
                     <img src={el.img} alt={el.title} className="img-fluid" />
                   </Link>
 

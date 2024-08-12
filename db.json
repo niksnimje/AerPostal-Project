@@ -607,10 +607,10 @@
     "men-product": [
         {
             "id": "1",
-            "img": "https://m.media-amazon.com/images/I/61yWnrT3eQL._SY741_.jpg",
-            "img2": "https://m.media-amazon.com/images/I/51BeLC7epAL._SX569_.jpg",
-            "img3": "https://m.media-amazon.com/images/I/61jDfo5TXVL._SX569_.jpg",
-            "img4": "https://m.media-amazon.com/images/I/71fU-G5qepL._SX569_.jpg",
+            "img": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1723011221_6019385.jpg?format=webp&w=480&dpr=1.0",
+            "img2": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1723011221_3983908.jpg?format=webp&w=480&dpr=1.0",
+            "img3": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1723011221_8350084.jpg?format=webp&w=480&dpr=1.0",
+            "img4": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1723011221_9550841.jpg?format=webp&w=480&dpr=1.0",
             "title": "Hello ",
             "mini":"Aero Exclusive",
             "price": "32.97",
