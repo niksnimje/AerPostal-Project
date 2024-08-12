@@ -44,7 +44,11 @@ function DescriptionMen() {
 
 
   const PostdataToCart=()=>{
-    axios.post('http://localhost:3000/Cart-data')
+    axios({
+      method:"post",
+      url: ' http://localhost:3000/Cart-data',
+      
+    })
     .then((res))
   }
 
