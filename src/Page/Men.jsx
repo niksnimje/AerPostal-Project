@@ -36,6 +36,7 @@ function Men() {
       .then((res) => setwomendata(res.data))
       .catch((err) => console.log(err));
   };
+  
 
   useEffect(() => {
     WomensProduct();

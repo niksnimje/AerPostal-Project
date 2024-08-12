@@ -623,10 +623,10 @@
         },
         {
             "id": "2",
-            "img": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dwb72ef218/60171560_300_main.jpg?sw=478&sh=557&sm=fit&sfrm=jpg",
-            "img2": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw6935064e/60171560_300_alt1.jpg?sw=478&sh=557&sm=fit&sfrm=jpg",
-            "img3": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw6935064e/60171560_300_alt1.jpg?sw=478&sh=557&sm=fit&sfrm=jpg",
-            "img4": "https://www.aeropostale.com/dw/image/v2/BBSG_PRD/on/demandware.static/-/Sites-master-catalog-aeropostale/default/dw6935064e/60171560_300_alt1.jpg?sw=478&sh=557&sm=fit&sfrm=jpg",
+            "img": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1709992546_3699193.jpg?format=webp&w=480&dpr=1.0",
+            "img2": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1709992546_3665916.jpg?format=webp&w=480&dpr=1.0",
+            "img3": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1709992546_8580233.jpg?format=webp&w=480&dpr=1.0",
+            "img4": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1709992546_2881936.jpg?format=webp&w=480&dpr=1.0",
             "title": "Hello Kitty Graphic Cami",
             "mini":"Aero Exclusive",
             "price": "14.97",
@@ -637,7 +637,28 @@
             "colors":  "White" ,
             "category":"Featured"
         }
+    ],
+
+    "Cart-data":
+    [
+        {
+            "id": "1",
+            "img": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1723011221_6019385.jpg?format=webp&w=480&dpr=1.0",
+            "img2": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1723011221_3983908.jpg?format=webp&w=480&dpr=1.0",
+            "img3": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1723011221_8350084.jpg?format=webp&w=480&dpr=1.0",
+            "img4": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1723011221_9550841.jpg?format=webp&w=480&dpr=1.0",
+            "title": "Hello ",
+            "mini":"Aero Exclusive",
+            "price": "32.97",
+            "comp":"  29.95",
+            "description": "A stylish graphic cami featuring Hello Kitty. Perfect for casual wear.",
+            "details": "Material: 100% Cotton. Machine washable. Imported.",
+            "sizes": ["XS", "S", "M", "L", "XL"],
+            "colors":  "White",
+            "category":"Featured"
+        }
     ]
+
 
 }
 

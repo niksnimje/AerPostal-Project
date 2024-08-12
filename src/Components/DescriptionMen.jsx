@@ -43,6 +43,12 @@ function DescriptionMen() {
   }
 
 
+  const PostdataToCart=()=>{
+    axios.post('http://localhost:3000/Cart-data')
+    .then((res))
+  }
+
+
   return (
     <>
       <div className="container-fluid mt-4">
