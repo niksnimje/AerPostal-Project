@@ -33,6 +33,7 @@ function NavbarCompo() {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     navigate(`/women?q=${search}`);
+    
   };
 
   return (
