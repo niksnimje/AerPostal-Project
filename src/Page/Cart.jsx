@@ -22,6 +22,17 @@ function Cart() {
     FetchPostData()
   },[])
 
+
+  const handleDelete = (id) => {
+    axios.delete(`http://localhost:3000/Cart-data/${id}`)
+      .then(() => {
+        alert("The Product Is remove...")
+        setdata(data.filter(item => item.id !== id));
+      })
+      .catch((err) => console.log(err));
+  }
+
+
   return (
     <>
     {data.map((el)=>(
@@ -32,10 +43,10 @@ function Cart() {
           <div className=" col-12 col-sm-8 col-md-8 col-lg-8">
             <div className="row">
               <div className="col-3 col-12 col-sm-8 col-md-4 col-lg-3">
-                  <img src={el.img} alt="" height={200} width={200} />
+                  <img src={el.img} alt="" height={250} width={200} />
               </div>
-              <div className="col-6 col-12 col-sm-6 col-md-6 col-lg-6">
-                <h6>{el.title}</h6>
+              <div className="col-6 col-12 col-sm-6 col-md-6 col-lg-6 ps-5">
+                <h6 >{el.title}</h6>
                 <span><b>Price:- {el.price} </b></span> <span>Comp. Value: ${el.comp}</span> &nbsp;&nbsp;
                 <button className='p-1' onClick={()=>setamont(amont-1)} disabled={amont===0}>-</button>
                 <span>{amont}</span>
@@ -52,7 +63,7 @@ function Cart() {
                 <Link style={{textDecoration:"none"}}><BiSolidEditAlt />Edit/Change Qut</Link>
                 <br />
                 <br />
-                <Link style={{textDecoration:"none"}}><RiDeleteBin6Line />Delete</Link>
+                <Link style={{textDecoration:"none"}} onClick={()=>handleDelete(el.id)}><RiDeleteBin6Line />Delete</Link>
                 <br />
                 <br />
                 <Link style={{textDecoration:"none"}}><LuTimerReset /> Save For Later</Link>

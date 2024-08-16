@@ -7,7 +7,6 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { GiCardPickup } from "react-icons/gi";
 import { PiHeartBold } from "react-icons/pi";
 
-// import './Css/Description.css'; // Import a separate CSS file for custom styles
 
 function Description() {
   const { id } = useParams();
@@ -34,14 +33,21 @@ function Description() {
       .catch((err) => console.log(err));
   };
 
+  const addToCart = () => {
+    axios
+      .post('http://localhost:3000/Cart-data', product)
+      .then(() => {
+        setShowModal(true);
+      })
+      .catch((err) => console.log(err));
+  };
+
   if (!product) return <p>Loading...</p>;
 
-
-    const LikeColor=()=>{
-    const like=document.getElementById("Like-btn")
-    like.style.color="red"
-  }
-
+  const LikeColor = () => {
+    const like = document.getElementById("Like-btn");
+    like.style.color = "red";
+  };
 
   return (
     <>
@@ -129,10 +135,10 @@ function Description() {
               </button>
               <br />
               <br />
-              <button className='btn btn-primary text-white' onClick={() => setShowModal(true)}>
+              <button className='btn btn-primary text-white' onClick={addToCart}>
                 Add to Bag
               </button>
-              <button className='btn btn-light' style={{fontSize:"20px"}} onClick={LikeColor} id='Like-btn'><PiHeartBold /></button>
+              <button className='btn btn-light' style={{ fontSize: "20px" }} onClick={LikeColor} id='Like-btn'><PiHeartBold /></button>
 
               <br />
               <br />
