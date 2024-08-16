@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
@@ -6,8 +5,6 @@ import { Nav, Tab, Row, Col, Modal, Button } from 'react-bootstrap';
 import { TbTruckDelivery } from "react-icons/tb";
 import { GiCardPickup } from "react-icons/gi";
 import { PiHeartBold } from "react-icons/pi";
-
-// import './Css/Description.css'; // Import a separate CSS file for custom styles
 
 function DescriptionMen() {
   const { id } = useParams();
@@ -36,22 +33,29 @@ function DescriptionMen() {
 
   if (!product) return <p>Loading...</p>;
 
-
-    const LikeColor=()=>{
-    const like=document.getElementById("Like-btn")
-    like.style.color="red"
+  const LikeColor = () => {
+    const like = document.getElementById("Like-btn");
+    like.style.color = "red";
   }
 
-
-  const PostdataToCart=()=>{
+  const PostdataToCart = () => {
     axios({
-      method:"post",
-      url: ' http://localhost:3000/Cart-data',
-      
+      method: "post",
+      url: 'http://localhost:3000/Cart-data',
+      data: {
+        img: product.img,
+        title: product.title,
+        price: product.price,
+        comp: product.comp,
+        quantity: 1
+      }
     })
-    .then((res))
+      .then((res) => {
+        console.log(res);
+        setShowModal(true);
+      })
+      .catch((err) => console.log(err));
   }
-
 
   return (
     <>
@@ -139,7 +143,7 @@ function DescriptionMen() {
               </button>
               <br />
               <br />
-              <button className='btn btn-primary text-white' onClick={() => setShowModal(true)}>
+              <button className='btn btn-primary text-white' onClick={PostdataToCart}>
                 Add to Bag
               </button>
               <button className='btn btn-light' style={{fontSize:"20px"}} onClick={LikeColor} id='Like-btn'><PiHeartBold /></button>
