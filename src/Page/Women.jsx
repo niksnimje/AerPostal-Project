@@ -125,7 +125,7 @@ function Women() {
                         {el.mini}
                       </p>
                       <h6>{el.title}</h6>
-                      <span style={{ fontWeight: "400" }}>${el.price}</span>{" "}
+                      <span style={{ fontWeight: "400" }}>{el.price}</span>{" "}
                       <span
                         style={{
                           fontWeight: "400",
