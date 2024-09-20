@@ -113,7 +113,7 @@ function DescriptionMen() {
           <div className="col-12 col-lg-5">
             <div className="product-details text-center text-lg-start" style={{ textAlign: "left", marginLeft: "5%" }}>
               <h1>{product.title}</h1>
-              <h4>Price: ${product.price}</h4>
+              <h4>Price: {product.price}</h4>
               <p>{product.description}</p>
               <h4>Details</h4>
               <p>{product.details}</p>

@@ -126,7 +126,7 @@ function Women() {
                         {el.mini}
                       </p>
                       <h6>{el.title}</h6>
-                      <span style={{ fontWeight: "400" }}>{el.price}</span>{" "}
+                      <span style={{ fontWeight: "400" }}>₹{el.price}</span>{" "}
                       <span
                         style={{
                           fontWeight: "400",
@@ -134,7 +134,7 @@ function Women() {
                           fontSize: "14px",
                         }}
                       >
-                        Comp.Vlaue ${el.comp}
+                        Comp.Vlaue ₹{el.comp}
                       </span>
                     </div>
                     <div className="col-2">
