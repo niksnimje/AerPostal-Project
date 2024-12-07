@@ -22,7 +22,7 @@ function Women() {
     const searchQuery = params.get('q');
 
     axios
-      .get('http://localhost:3000/women-product', {
+      .get('https://backend-aerpostal.onrender.com/women-product', {
         params: {
           _page: page,
           _limit: 20,
