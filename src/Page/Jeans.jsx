@@ -22,7 +22,7 @@ function Jeans() {
     const searchQuery = params.get('q');
 
     axios
-      .get('http://localhost:3000/jeans-data', {
+      .get('https://backend-aerpostal.onrender.com/jeans-data', {
         params: {
           _page: page,
           _limit: 20,
